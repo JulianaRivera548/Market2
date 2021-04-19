@@ -88,6 +88,12 @@ class Administrador{
         }
     }
     
-    
-    
+    public function consultar(){
+        $this -> conexion -> abrir();
+        $this -> conexion -> ejecutar($this -> administradorDAO -> consultar());
+        $resultado = $this -> conexion -> extraer();
+        $this -> nombre = $resultado[0];
+        $this -> apellido = $resultado[1];
+        $this -> correo = $resultado[2];
+    }
 }

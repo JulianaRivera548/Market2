@@ -21,6 +21,10 @@ class AdministradorDAO{
                 where correo = '" . $this -> correo . "' and clave = '" . md5($this -> clave) . "'";
     }
     
-    
+    public function consultar(){
+        return "select nombre, apellido, correo
+                from administrador
+                where idadministrador = '" . $this -> id . "'";
+    }
     
 }
