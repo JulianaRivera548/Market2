@@ -45,7 +45,7 @@ $administrador -> consultar();
 						<a class="dropdown-item" href="#">Editar Perfil</a> <a
 							class="dropdown-item" href="#">Cambiar Clave</a>
 					</div></li>
-				<li class="nav-item"><a class="nav-link" href="#">Cerrar Sesion</a></li>
+				<li class="nav-item"><a class="nav-link" href="index.php?sesion=false">Cerrar Sesion</a></li>
 			</ul>
 		</div>
 	</div>

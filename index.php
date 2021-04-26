@@ -1,10 +1,20 @@
 <?php
 session_start();
 require_once "logica/Administrador.php";
+
+if(isset($_GET["sesion"]) && $_GET["sesion"] == "false"){    
+    $_SESSION["id"] = "";    
+}
 $pid = "";
 if (isset($_GET["pid"])) {
     $pid = base64_decode($_GET["pid"]);
 }
+
+$pagSinSesion = array(
+    "presentacion/autenticar.php" 
+);
+
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -22,7 +32,7 @@ if (isset($_GET["pid"])) {
 </head>
 <body>
     <?php
-    if ($pid != "") {
+    if ($pid != "" && (in_array($pid, $pagSinSesion) || (isset($_SESSION["id"]) && $_SESSION["id"] != ""))) {
         include $pid;
     } else {
         include "presentacion/inicio.php";

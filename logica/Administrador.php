@@ -78,6 +78,7 @@ class Administrador{
     
     public function autenticar(){
         $this -> conexion -> abrir();
+        echo $this -> administradorDAO -> autenticar();
         $this -> conexion -> ejecutar($this -> administradorDAO -> autenticar());
         if($this -> conexion -> numFilas() == 0){
             return false;
@@ -89,7 +90,7 @@ class Administrador{
     }
     
     public function consultar(){
-        $this -> conexion -> abrir();
+        $this -> conexion -> abrir();        
         $this -> conexion -> ejecutar($this -> administradorDAO -> consultar());
         $resultado = $this -> conexion -> extraer();
         $this -> nombre = $resultado[0];

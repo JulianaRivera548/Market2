@@ -8,5 +8,4 @@ if($administrador -> autenticar()){
 }else{
     header("Location: index.php?error=1");
 }
-
 ?>
