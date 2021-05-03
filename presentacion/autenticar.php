@@ -1,5 +1,5 @@
 <?php
-$correo = $_POST["correo"];
+$correo = str_replace(" ", "#", $_POST["correo"]);
 $clave = $_POST["clave"];
 $administrador = new Administrador(0, "", "", $correo, $clave);
 if($administrador -> autenticar()){

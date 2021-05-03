@@ -1,6 +1,9 @@
 <?php
 session_start();
 require_once "logica/Administrador.php";
+require_once "logica/Marca.php";
+require_once "logica/TipoProducto.php";
+require_once "logica/Producto.php";
 
 if(isset($_GET["sesion"]) && $_GET["sesion"] == "false"){    
     $_SESSION["id"] = "";    
